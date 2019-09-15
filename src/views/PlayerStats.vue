@@ -3,8 +3,8 @@
     <div class="header">
       <div class="header-bg"></div>
       <div class="title">
-        <span class="player-name">Alfie</span>
-        <span class="player-level">Level 100 (2992367 xp)</span>
+        <span class="player-name">{{ player.name }}</span>
+        <span class="player-level">Level {{ player.level }} ({{ player.xp }} xp)</span>
         <span class="player-time-played">Time spent in game: 1,518h 32m 54s</span>
         <ul class="social-icons">
           <font-awesome-icon class="social-icon" :icon="['fab', 'twitter']" />
@@ -73,26 +73,6 @@
             losses="50"
             winrate="56.4"
           />
-          <Ranked2v2TeamDisplay
-            teammate="beng shookle"
-            tier="Platinum 5"
-            rating="1950"
-            peak_rating="1977"
-            games="68"
-            wins="43"
-            losses="25"
-            winrate="63.2"
-          />
-          <Ranked2v2TeamDisplay
-            teammate="Kvothe"
-            tier="Platinum 4"
-            rating="1908"
-            peak_rating="1953"
-            games="146"
-            wins="79"
-            losses="67"
-            winrate="54.1"
-          />
         </ul>
       </div>
       <div id="legends">
@@ -118,12 +98,17 @@ export default {
     Ranked2v2AvgDisplay,
     LegendStats
   },
-  data() {
-    return {
-      playerStats: {}
-    };
+  computed: {
+    player() {
+      return this.$store.getters.fetchPlayerStats;
+    }
+  },
+  beforeRouteUpdate(to, from, next) {
+    this.$store.dispatch("fetchPlayerStats", to.params.id);
+    next();
   },
   mounted() {
+    this.$store.dispatch("fetchPlayerStats", this.$route.params.id);
   }
 };
 </script>

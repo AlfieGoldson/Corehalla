@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import About from './views/About.vue'
 import PlayerStats from './views/PlayerStats.vue'
 import Leaderboard from './views/Leaderboard.vue'
 import Legend from './views/wiki/legends/legend.vue'
@@ -18,17 +17,12 @@ export default new Router({
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About
-    },
-    {
-      path: '/leaderboard',
+      path: '/stats/leaderboard/:bracket?/:region?/:page?',
       name: 'leaderboard',
       component: Leaderboard
     },
     {
-      path: '/p',
+      path: '/stats/player/:id',
       name: 'player-stats',
       component: PlayerStats
     },

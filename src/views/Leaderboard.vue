@@ -3,27 +3,27 @@
     <div class="header">
       <div class="header-bg"></div>
       <div class="title">
-        <input class="player-name" placeholder="Search Player..." />
-        <a href="#" class="search-btn">
+        <input ref="search_input" class="player-name" placeholder="Search Player..." />
+        <a class="search-btn" v-on:click="search">
           <font-awesome-icon icon="search" />&nbsp;&nbsp;Search
         </a>
       </div>
       <nav class="header-nav">
         <ul>
           <li>
-            <a href="#ranked1v1">1v1</a>
+            <router-link to="/stats/leaderboard/1v1">1v1</router-link>
           </li>
           <li>
-            <a href="#ranked2v2">2v2</a>
+            <router-link to="/stats/leaderboard/2v2">2v2</router-link>
           </li>
           <li>
-            <a href="#general">Cash</a>
+            <router-link to="/stats/leaderboard/cash">Cash</router-link>
           </li>
           <li>
-            <a href="#legends">Power</a>
+            <router-link to="/stats/leaderboard/power">Power</router-link>
           </li>
           <li>
-            <a href="#legends">Clans</a>
+            <router-link to="/stats/leaderboard/clans">Clans</router-link>
           </li>
         </ul>
       </nav>
@@ -43,16 +43,8 @@
         </tr>
         <Leaderboard1v1ListItem
           v-for="player in leaderboard"
-          :key="player.brawlhalla_id"
-          :rank="player.rank"
-          :name="player.name"
-          :id="player.brawlhalla_id"
-          :rating="player.rating"
-          :peak_rating="player.peak_rating"
-          :tier="player.tier"
-          :games="player.games"
-          :wins="player.wins"
-          :region="player.region"
+          :key="player.player_one_id"
+          :player="player"
         />
       </table>
     </div>
@@ -61,62 +53,51 @@
 
 <script>
 import Leaderboard1v1ListItem from "@/components/Leaderboard1v1ListItem.vue";
-// import axios from "axios";
 
 export default {
   name: "leaderboard",
   components: {
     Leaderboard1v1ListItem
   },
-  data() {
-    return {
-      leaderboard: [
-        {
-          rank: "1",
-          name: "Player 1",
-          brawlhalla_id: 173537,
-          best_legend: 31,
-          best_legend_games: 211,
-          best_legend_wins: 163,
-          rating: 2729,
-          tier: "Diamond",
-          games: 211,
-          wins: 163,
-          region: "EU",
-          peak_rating: 2729
+  computed: {
+    leaderboard() {
+      return this.$store.getters.fetchLeaderboard.leaderboard;
+    },
+    leaderboard_options() {
+      return this.$store.getters.fetchLeaderboard.options;
+    }
+  },
+  methods: {
+    search() {
+      this.$router.push({
+        path: "/stats/leaderboard",
+        params: {
+          bracket: this.$route.params.bracket || "1v1",
+          region: this.$route.params.region || "all",
+          page: this.$route.params.page || "1"
         },
-        {
-          rank: "2",
-          name: "Player 2",
-          brawlhalla_id: 257670,
-          best_legend: 50,
-          best_legend_games: 254,
-          best_legend_wins: 209,
-          rating: 2722,
-          tier: "Diamond",
-          games: 254,
-          wins: 209,
-          region: "US-E",
-          peak_rating: 2722
-        },
-        {
-          rank: "3",
-          name: "Player 3",
-          brawlhalla_id: 1575415,
-          best_legend: 14,
-          best_legend_games: 112,
-          best_legend_wins: 106,
-          rating: 2683,
-          tier: "Diamond",
-          games: 112,
-          wins: 106,
-          region: "US-E",
-          peak_rating: 2683
+        query: {
+          player: this.$refs.search_input.value || ""
         }
-      ]
-    };
+      });
+    }
+  },
+  beforeRouteUpdate(to, from, next) {
+    this.$store.dispatch("fetchLeaderboard", {
+      bracket: to.params.bracket || "1v1",
+      region: to.params.region || "all",
+      page: to.params.page || "1",
+      player_name: to.query.player || ""
+    });
+    next();
   },
   mounted() {
+    this.$store.dispatch("fetchLeaderboard", {
+      bracket: this.$route.params.bracket || "1v1",
+      region: this.$route.params.region || "all",
+      page: this.$route.params.page || "1",
+      player_name: this.$route.query.player || ""
+    });
   }
 };
 </script>
@@ -177,6 +158,7 @@ export default {
       border-radius: 16px;
       text-transform: uppercase;
       font-size: 12px;
+      cursor: pointer;
     }
   }
 }

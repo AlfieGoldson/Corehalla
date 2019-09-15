@@ -6,7 +6,7 @@
           <img src="./assets/imgs/brand/logo.png" alt="Corehalla Logo" class="main-logo" />
         </router-link>
       </div>
-      <div class="window-btns">
+      <!-- <div class="window-btns">
         <div class="window-btn window-minimize-btn">
           <font-awesome-icon :icon="['far', 'window-minimize']" />
         </div>
@@ -16,19 +16,19 @@
         <div class="window-btn window-close-btn">
           <font-awesome-icon icon="times" />
         </div>
-      </div>
+      </div>-->
     </div>
     <div class="sidenav">
       <nav>
         <ul>
           <li>
-            <router-link to="/leaderboard">
+            <router-link to="/stats/leaderboard">
               <font-awesome-icon class="nav-item-icon" icon="star" />
               <span class="nav-item-label">Leaderboard</span>
             </router-link>
           </li>
           <li>
-            <router-link to="/p">
+            <router-link to="/stats/player/4281946">
               <font-awesome-icon class="nav-item-icon" icon="chart-pie" />
               <span class="nav-item-label">My Stats</span>
             </router-link>
@@ -61,10 +61,7 @@
       </nav>
     </div>
     <div class="container">
-      <transition
-        name="router-anim"
-        leave-active-class="animated fadeOut faster"
-      >
+      <transition name="router-anim" enter-active-class="animated fadeIn fast" leave-active-class="animated fadeOut faster">
         <router-view />
       </transition>
     </div>
