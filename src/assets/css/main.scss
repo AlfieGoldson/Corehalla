@@ -1,0 +1,240 @@
+html, body {
+    background-color: #181818;
+    color: #fff;
+    font-family: 'Gotham', sans-serif;
+    overflow: hidden;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.page-anim-delay {
+    animation-delay: .25s;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    outline: none;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+::placeholder {
+    color: #fff;
+    opacity: 0.75;
+  }
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-left {
+    text-align: left;
+}
+
+::-webkit-scrollbar {     
+    width: 16px;
+    background-color: #181818;
+}
+
+::-webkit-scrollbar-button:start {
+    width: 16px;
+    height: 16px;
+    background-image: url('./assets/icons/angle-up-solid.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+::-webkit-scrollbar-button:end {
+    width: 16px;
+    height: 16px;
+    background-image: url('./assets/icons/angle-down-solid.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-thumb:window-inactive,
+::-webkit-scrollbar-thumb {
+    background:  #535353;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 236px;
+    right: 0;
+    bottom: 16px;
+    overflow-y: scroll;
+}
+
+.content {
+    padding: 0 16px;
+}
+
+.appnav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 46px;
+    -webkit-app-region: drag;
+    z-index: 80;
+    // background-color: rgba(0, 0, 0, 0.2); //Remove
+
+    .main-logo-container {
+        width: 220px;
+        height: 46px;
+        text-align: center;
+        display: inline-block;
+        background-color: #121212;
+        
+        .main-logo {
+            width: auto;
+            height: 100%;
+            -webkit-app-region: no-drag;
+        }
+    }
+
+    .window-btns {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 134px;
+        height: 30px;
+        background-color: #181818;
+        cursor: pointer;
+        z-index: 100;
+        -webkit-app-region: no-drag;
+    
+        .window-btn {
+            display: inline-block;
+            text-align: center;
+            height: 30px;
+
+            svg {
+                padding-top: 6px;
+                height: 16px;
+            }
+        }
+    
+        .window-close-btn {
+            width: 44px;
+            &:hover {
+                background-color: #cd1a2b;
+            }
+        }
+    
+        .window-maximize-btn, .window-minimize-btn {
+            width: 45px;
+            &:hover {
+                background-color: #535353;
+            }
+        }
+    }
+    
+}
+
+.sidenav {
+    position: absolute;
+    top: 46px;
+    left: 0;
+    bottom: 16px;
+    width: 236px;
+    background-color: #121212;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    nav {
+        position: relative;
+        width: 236px;
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            display: block;
+            padding: 12px 24px;
+            
+            a {
+                color: #b3b3b3;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+
+            .nav-item-icon {
+                margin-right: 12px;
+            }
+
+            .nav-item-label {
+                font-size: 16px;
+            }
+        }
+    }
+
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 16px;
+    background-color: #42a5f5;
+}
+
+.category-title {
+    display: block;
+    border-bottom: 1px solid #535353;
+    color: white;
+    font-size: 16px;
+    margin: 16px 0 24px 0;
+    padding-bottom: 4px;
+}
+
+.header-nav {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            display: inline-block;
+            padding: 4px 24px;
+            a {
+                padding: 8px 0;
+                &:hover {
+                    border-bottom: 2px solid #42a5f5;
+                }
+            }
+        }
+    }
+}
