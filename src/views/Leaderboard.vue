@@ -61,7 +61,7 @@
 
 <script>
 import Leaderboard1v1ListItem from "@/components/Leaderboard1v1ListItem.vue";
-import axios from "axios";
+// import axios from "axios";
 
 export default {
   name: "leaderboard",
