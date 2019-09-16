@@ -2,7 +2,7 @@
   <div class="ranked1v1-display">
     <p class="align-right">
       <span class="italic">Tier&nbsp;</span>
-      <span class="bold">Diamond</span>
+      <span class="bold">Emerald</span>
       <br />143 Games (92W/51L)
       <br />Current Elo: 2312
       <br />Peak Elo: 2312
@@ -10,7 +10,7 @@
       <br />
       <img src="../assets/imgs/icons/flags/EU.png" width="40px" height="40px" />
     </p>
-    <img src="../assets/imgs/ranked-banners/Diamond.png" class="tier-banner" />
+    <img src="../assets/imgs/ranked-banners/Emerald.png" class="tier-banner" />
     <p class="align-left">
       <span class="bold">Ada&nbsp;</span>
       <span class="italic">Highest Legend</span>

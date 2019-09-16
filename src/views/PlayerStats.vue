@@ -3,7 +3,7 @@
     <div class="header">
       <div class="header-bg"></div>
       <div class="title">
-        <span class="player-name">{{ player.name }}</span>
+        <span class="player-name">Alfie</span>
         <span class="player-level">Level {{ player.level }} ({{ player.xp }} xp)</span>
         <span class="player-time-played">Time spent in game: 1,518h 32m 54s</span>
         <ul class="social-icons">
