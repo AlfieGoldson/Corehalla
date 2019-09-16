@@ -13,3 +13,9 @@ app.get(/.*/, (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server Listening on Port ${PORT}`);
 })
+
+// Keep Awake
+var http = require("http");
+setInterval(function() {
+    http.get("http://corehalla2.herokuapp.com");
+}, 300000);
