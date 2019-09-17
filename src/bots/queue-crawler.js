@@ -41,10 +41,10 @@ setInterval(() => {
     }
 }, 25000);
 
-const updateQueue = (bracketIndex, regionIndex, leaderboard) => {
+const updateQueue = (bracketIndex, regionIndex, data) => {
     const index = regionIndex + bracketIndex * regions.length;
     const newQueues = [];
-    if (leaderboard[index] === undefined) {
+    if (leaderboards[index] === undefined) {
         leaderboards[index] = data;
         return;
     }
