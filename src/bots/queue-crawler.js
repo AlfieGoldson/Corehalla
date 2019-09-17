@@ -1,7 +1,8 @@
 const bh_api = require("corehalla")(process.env.BRAWLHALLA_API_KEY);
 
 const brackets = ['1v1', '2v2'];
-const regions = ['us-e', 'eu', 'sea', 'brz', 'aus', 'us-w', 'jpn'];
+// const regions = ['us-e', 'eu', 'sea', 'brz', 'aus', 'us-w', 'jpn'];
+const regions = ['eu'];
 const leaderboards = [];
 const queues = [];
 
