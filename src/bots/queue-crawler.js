@@ -44,11 +44,7 @@ setInterval(() => {
 const updateQueue = (bracketIndex, regionIndex, data) => {
     const index = regionIndex + bracketIndex * regions.length;
     const newQueues = [];
-    if (leaderboards[index] === undefined) {
-        leaderboards[index] = data;
-        return;
-    }
-    else {
+    if (leaderboards[index] !== undefined) {
         for (var newPlayerData in data) {
             for (var player in leaderboards[index]) {
                 if (player.brawlhalla_id === newPlayerData.brawlhalla_id) {
@@ -70,5 +66,6 @@ const updateQueue = (bracketIndex, regionIndex, data) => {
         }
         queues[index] = newQueues;
     }
+    leaderboards[index] = data;
     console.log(queues);
 }
