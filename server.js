@@ -16,9 +16,11 @@ app.listen(PORT, () => {
 
 // Discord Bot
 require('./src/bots/discord-bot');
+// require('./src/bots/discord-manager');
+require('./src/bots/queue-crawler');
 
 // Keep Awake
-var http = require("http");
+var http = require('http');
 setInterval(function() {
-    http.get("http://corehalla2.herokuapp.com");
+    http.get('http://corehalla2.herokuapp.com');
 }, 300000);
