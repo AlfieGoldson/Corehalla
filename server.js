@@ -17,7 +17,7 @@ app.listen(PORT, () => {
 // Discord Bot
 require('./src/bots/discord-bot');
 // require('./src/bots/discord-manager');
-require('./src/bots/queue-crawler');
+// require('./src/bots/queue-crawler');
 
 // Keep Awake
 var http = require('http');
