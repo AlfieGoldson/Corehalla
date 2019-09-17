@@ -14,6 +14,9 @@ app.listen(PORT, () => {
     console.log(`Server Listening on Port ${PORT}`);
 })
 
+// Discord Bot
+require('./src/bots/discord-bot');
+
 // Keep Awake
 var http = require("http");
 setInterval(function() {
