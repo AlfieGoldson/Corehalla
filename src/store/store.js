@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-const bh_api = require("corehalla")(
-    require("../config/keys").brawlhalla.api_key
-);
+const bh_api = require("corehalla")(process.env.BRAWLHALLA_API_KEY);
 
 Vue.use(Vuex)
 

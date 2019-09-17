@@ -1,2 +1,2 @@
 # Corehalla
-Corehalla Github Repo
+Corehalla Github Repository
