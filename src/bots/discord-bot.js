@@ -21,16 +21,15 @@ client.on('message', msg => {
             break;
 
             case '!lead':
-            msg.channel.send(generateLeadEmbed(args[1] || '1v1', args[2] || 'all', args[3] || '1'));
+            generateLeadEmbed('1v1', args[1] || 'all', args[2] || '1').then(embed => {
+                msg.channel.send({ embed });
+            }).catch(err => console.log(err));
             break;
 
             default:
             break;
         }
     }
-//   if (msg.content === 'ping') {
-//     msg.reply('Pong!');
-//   }
 });
 
 client.on('error', console.error);
@@ -38,7 +37,33 @@ client.on('error', console.error);
 client.login(process.env.DISCORD_BOT_TOKEN);
 
 const generateLeadEmbed = (bracket, region, page) => {
-    bh_api.fetchLeaderboard({ bracket, region, page }).then(data => {
+    return new Promise((resolve, reject) => {
+        bh_api.fetchLeaderboard({ bracket, region, page: Math.floor(page/2) + (page%2) }).then(data => {
+            var embed = {
+                color: 0x0099ff,
+                title: `${region.toUpperCase()}/${bracket} • page ${page}`,
+                url: `http://beta.corehalla.com/stats/leaderboard/${bracket}/${region}/${page}`,
+                author: {
+                    name: 'Corehalla',
+                    url: 'http://corehalla.com'
+                },
+                description: `${region.toUpperCase()}/${bracket} Leaderboard • page ${page}`,
+                fields: [{
+                    name: '_',
+                    value: '',
+                    inline: true
+                }]
+            }
 
+            for (var i = 0; i < 25; i++) {
+                const player = data[i + 25 * (1 - (page % 2))];
+                if (player)
+                    embed.fields[0].value += `${player.rank} - ${player.name} (${player.rating}/${player.peak_rating} Peak)\n`;
+                else
+                    break;
+            }
+            resolve(embed);
+        })
+        .catch(err => reject(err))
     })
 }
