@@ -8,9 +8,20 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('Pong!');
-  }
+    const args = msg.content.split(' ');
+    if (args[0].startsWith('!')) {
+        switch(args[0]) {
+            case '!stats':
+            msg.channel.send('Your Stats');
+            break;
+
+            default:
+            break;
+        }
+    }
+//   if (msg.content === 'ping') {
+//     msg.reply('Pong!');
+//   }
 });
 
 client.on('error', console.error);
