@@ -17,7 +17,9 @@ client.on('message', msg => {
             break;
 
             case '!rank':
-            msg.channel.send('Your Stats');
+            generatePlayerRankEmbed(4281946).then(embed => {
+                msg.channel.send({ embed });
+            })
             break;
 
             case '!lead':
@@ -65,5 +67,29 @@ const generateLeadEmbed = (bracket, region, page) => {
             resolve(embed);
         })
         .catch(err => reject(err))
+    })
+}
+
+const generatePlayerRankEmbed = (player_id) => {
+    return new Promise((resolve, reject) => {
+        bh_api.fetchPlayerStatsFormat(player_id).then(player => {
+            var embed = {
+                color: 0x0099ff,
+                title: `duh`,
+                url: `http://beta.corehalla.com/stats/player/4281946`,
+                author: {
+                    name: 'Corehalla',
+                    url: 'http://corehalla.com'
+                },
+                description: `Duh`,
+                fields: [{
+                    name: 'Name',
+                    value: `[${player.name}](http://beta.corehalla.com/stats/player/4281946)\n
+                    < [${player.clan.name}](http://beta.corehalla.com/stats/clan/XXXXX) >`,
+                    inline: true
+                }]
+            }
+            resolve(embed);
+        })
     })
 }
