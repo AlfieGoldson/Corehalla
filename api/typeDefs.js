@@ -7,10 +7,20 @@ module.exports = gql`
     discordID: String
     brawlhallaID: String
   }
+  type PlayerStats {
+      brawlhallaID: String
+      name: String
+      xp: Int
+      level: Int
+      games: Int
+      wins: Int
+      losses: Int
+  }
   type Query {
-    users: [User]
+    users(name: String): [User]
+    playerStats(brawlhallaID: String): PlayerStats
   }
   type Mutation {
-      createUser(name: String!): User!
+      createUser(name: String!, brawlhallaID: String): User!
   }
 `
