@@ -41,6 +41,12 @@
           </li>
           <li>
             <router-link to="/">
+              <font-awesome-icon class="nav-item-icon" icon="book" />
+              <span class="nav-item-label">Wiki</span>
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/">
               <font-awesome-icon class="nav-item-icon" icon="palette" />
               <span class="nav-item-label">Damage Indicator</span>
             </router-link>

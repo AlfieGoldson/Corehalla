@@ -114,68 +114,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header {
-  position: relative;
-  height: 326px;
-  width: 100%;
-
   .header-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background-image: url("../assets/imgs/backgrounds/ada-wallpaper.png");
-    background-position: center;
-    background-size: cover;
-    filter: saturate(0.32);
-    z-index: -2;
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      content: "";
-      width: 100%;
-      height: 326px;
-      background-image: linear-gradient(transparent, #181818);
-    }
   }
-
-  .title {
-    padding-left: 24px;
-    padding-top: 98px;
-
-    .player-name {
-      display: block;
-      font-size: 92px;
-      font-weight: bold;
-      line-height: 80px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .player-level {
-      display: block;
-      font-size: 12px;
-    }
-    .player-time-played {
-      display: block;
-      font-size: 12px;
-    }
-    .social-icons {
-      margin: 24px 0;
-      padding-left: 0;
-      .social-icon {
-        margin-right: 32px;
-        width: 24px;
-        height: 24px;
-      }
-    }
-  }
-}
-
 .ranked2v2-teams {
   margin: 0;
   padding: 0;

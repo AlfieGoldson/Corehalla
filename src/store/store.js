@@ -7,10 +7,17 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
     state: {
-
+        social: {
+            twitter: "https://twitter.com/Corehalla",
+            discord: "https://discord.gg/eD248ez",
+            githubWebsite: "https://github.com/AlfieGoldson/Corehalla",
+            githubNPMModule: "https://github.com/AlfieGoldson/Corehalla-NPM",
+            githubWiki: "https://github.com/AlfieGoldson/Corehalla-Wiki",
+            patreon: "https://patreon.com/Corehalla",
+            trello: "https://trello.com/b/ZjfqD2Qx/corehalla-dev"
+        },
         leaderboard: [],
         playerStats: []
-
     },
     getters: {
         fetchLeaderboard: state => {

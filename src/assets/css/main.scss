@@ -52,7 +52,7 @@ ul, li {
     text-align: left;
 }
 
-::-webkit-scrollbar {     
+::-webkit-scrollbar {
     width: 16px;
     background-color: #181818;
 }
@@ -88,6 +88,67 @@ ul, li {
     overflow-y: scroll;
 }
 
+.header {
+  position: relative;
+  height: 326px;
+  width: 100%;
+
+  .header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center;
+    background-size: cover;
+    filter: saturate(0.32);
+    z-index: -2;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: "";
+      width: 100%;
+      height: 326px;
+      background-image: linear-gradient(transparent, #181818);
+    }
+  }
+
+  .title {
+    padding-left: 24px;
+    padding-top: 98px;
+
+    .player-name {
+      display: block;
+      font-size: 92px;
+      font-weight: bold;
+      line-height: 80px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .player-level {
+      display: block;
+      font-size: 12px;
+    }
+    .player-time-played {
+      display: block;
+      font-size: 12px;
+    }
+    .social-icons {
+      margin: 24px 0;
+      padding-left: 0;
+      .social-icon {
+        margin-right: 32px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
 .content {
     padding: 0 16px;
 }
@@ -108,7 +169,7 @@ ul, li {
         text-align: center;
         display: inline-block;
         background-color: #121212;
-        
+
         .main-logo {
             width: auto;
             height: 100%;
@@ -126,7 +187,7 @@ ul, li {
         cursor: pointer;
         z-index: 100;
         -webkit-app-region: no-drag;
-    
+
         .window-btn {
             display: inline-block;
             text-align: center;
@@ -137,14 +198,14 @@ ul, li {
                 height: 16px;
             }
         }
-    
+
         .window-close-btn {
             width: 44px;
             &:hover {
                 background-color: #cd1a2b;
             }
         }
-    
+
         .window-maximize-btn, .window-minimize-btn {
             width: 45px;
             &:hover {
@@ -152,7 +213,7 @@ ul, li {
             }
         }
     }
-    
+
 }
 
 .sidenav {
@@ -177,7 +238,7 @@ ul, li {
         li {
             display: block;
             padding: 12px 24px;
-            
+
             a {
                 color: #b3b3b3;
 

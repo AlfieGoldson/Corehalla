@@ -30,6 +30,30 @@ export default new Router({
             path: '/l',
             name: 'wiki-legend-page',
             component: Legend
+        },
+        {
+            path: '/twitter',
+            beforeEnter(to, from, next) {
+                window.location = "https://twitter.com/Corehalla"
+            }
+        },
+        {
+            path: '/discord',
+            beforeEnter(to, from, next) {
+                window.location = "https://discord.gg/eD248ez"
+            }
+        },
+        {
+            path: '/github-website',
+            beforeEnter(to, from, next) {
+                window.location = "https://github.com/AlfieGoldson/Corehalla"
+            }
+        },
+        {
+            path: '/github-npm-module',
+            beforeEnter(to, from, next) {
+                window.location = "https://github.com/AlfieGoldson/Corehalla-NPM"
+            }
         }
     ]
 })
