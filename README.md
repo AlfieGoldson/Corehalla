@@ -33,3 +33,23 @@ Corehalla Github Repository
 
 ### Mobile App
 #### Push Notifications?
+
+## Technologies Used
+
+### Backend
+Node.js
+Express
+Corehalla-NPM
+Robot.js
+Mongoose
+
+## Frontend
+Vue.js
+Vuex
+VueMarkdown
+FontAwesome
+Discord.js
+Electron
+
+## Database
+Mongo Atlas
