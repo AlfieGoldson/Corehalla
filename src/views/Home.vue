@@ -31,10 +31,12 @@
 				</ul>
 			</div>
 		</div>
-		<h1>COREHALLA</h1>
-		<h2>About Corehalla</h2>
-		<h3>What is Corehalla</h3>
-		Corehalla.com is a Community maintained statistics/rankings website and wiki for the game Brawlhalla.<br>
+        <vue-markdown>
+# COREHALLA
+## About Corehalla
+### What is Corehalla
+Corehalla.com is a Community maintained statistics/rankings website and wiki for the game Brawlhalla.<br>
+        </vue-markdown>
   </div>
 </template>
 

@@ -17,7 +17,10 @@ export const store = new Vuex.Store({
             trello: "https://trello.com/b/ZjfqD2Qx/corehalla-dev"
         },
         leaderboard: [],
-        playerStats: []
+        playerStats: [],
+        wiki: {
+            currentPage: 'fiyu'
+        }
     },
     getters: {
         fetchLeaderboard: state => {
@@ -39,7 +42,20 @@ export const store = new Vuex.Store({
         },
         clearPlayerStats: state => {
             state.playerStats = [];
-        }
+        },
+        updateWikiPage: state => {
+            fetch('../wiki/raw/index.md')
+                .then(res => res.text()
+                    .then(text => {
+                        state.wiki.currentPage = ''
+                    })
+                    .catch(console.error)
+                )
+                .catch(console.error)
+        },
+        clearWikiPage: state => {
+            state.wiki.currentPage = '';
+        },
     },
     actions: {
         fetchLeaderboard: (context, options) => {
@@ -55,6 +71,10 @@ export const store = new Vuex.Store({
                 context.commit('updatePlayerStats', data);
             })
                 .catch(err => console.log(err));
+        },
+        changeWikiPage: (context/* pageURL */) => {
+            context.commit('clearWikiPage');
+            context.commit('updateWikiPage');
         }
     }
 })
