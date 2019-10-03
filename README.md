@@ -36,6 +36,12 @@ Corehalla Github Repository
 
 ## Technologies Used
 
+### Languages
+HTML
+CSS / SCSS
+JS
+Markdown
+
 ### Backend
 Node.js
 Express
