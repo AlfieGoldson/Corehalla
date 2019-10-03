@@ -1,3 +1,3 @@
-[submodule "public/public/wiki"]
-	path = public/public/wiki
+[submodule "public/wiki"]
+	path = public/wiki
 	url = https://github.com/AlfieGoldson/CorehallaWiki
