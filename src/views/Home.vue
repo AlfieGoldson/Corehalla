@@ -35,7 +35,7 @@
 # COREHALLA
 ## About Corehalla
 ### What is Corehalla
-Corehalla.com is a Community maintained statistics/rankings website and wiki for the game Brawlhalla.<br>
+Corehalla.com is a Community maintained statistics/rankings website and wiki for the game Brawlhalla.
         </vue-markdown>
   </div>
 </template>

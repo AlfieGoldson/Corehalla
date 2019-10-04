@@ -28,7 +28,7 @@
             return this.$store.state.social;
         },
         pageMarkdown() {
-            return this.$store.state.wiki.currentPage;
+            return this.$store.getters.getCurrentWikiPage;
         }
     },
     beforeRouteUpdate(to, from, next) {
@@ -36,7 +36,7 @@
         next();
     },
     mounted() {
-        this.$store.dispatch('changeWikiPage');
+		this.$store.dispatch('changeWikiPage');
     }
 }
 </script>

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 const bh_api = require("corehalla")(process.env.BRAWLHALLA_API_KEY);
+console.log(process.env.VUE_BRAWLHALLA_API_KEY);
 
 Vue.use(Vuex)
 
@@ -28,6 +29,9 @@ export const store = new Vuex.Store({
         },
         fetchPlayerStats: state => {
             return state.playerStats;
+        },
+        getCurrentWikiPage: state => {
+            return state.wiki.currentPage;
         }
     },
     mutations: {
@@ -43,19 +47,12 @@ export const store = new Vuex.Store({
         clearPlayerStats: state => {
             state.playerStats = [];
         },
-        updateWikiPage: state => {
-            fetch('../wiki/raw/index.md')
-                .then(res => res.text()
-                    .then(text => {
-                        state.wiki.currentPage = ''
-                    })
-                    .catch(console.error)
-                )
-                .catch(console.error)
+        updateWikiPage: (state, data) => {
+            Vue.set(state.wiki, 'currentPage', data);
         },
         clearWikiPage: state => {
             state.wiki.currentPage = '';
-        },
+        }
     },
     actions: {
         fetchLeaderboard: (context, options) => {
@@ -74,7 +71,14 @@ export const store = new Vuex.Store({
         },
         changeWikiPage: (context/* pageURL */) => {
             context.commit('clearWikiPage');
-            context.commit('updateWikiPage');
+            fetch('../wiki/raw/index.md')
+                .then(res => res.text()
+                    .then(text => {
+                        context.commit('updateWikiPage', text);
+                    })
+                    .catch(console.error)
+                )
+                .catch(console.error)
         }
     }
 })
