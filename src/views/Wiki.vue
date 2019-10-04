@@ -43,6 +43,6 @@
 
 <style lang="scss" scoped>
 	.header-bg {
-		background-image: url("../assets/imgs/backgrounds/ulgrim-wallpaper.png");
+		background-image: url("/assets/images/backgrounds/ulgrim-wallpaper.png");
 	}
 </style>

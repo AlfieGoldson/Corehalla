@@ -3,7 +3,7 @@
     <div class="appnav">
       <div class="main-logo-container">
         <router-link to="/">
-          <img src="./assets/imgs/brand/logo.png" alt="Corehalla Logo" class="main-logo" />
+          <img src="/assets/images/brand/logo.png" alt="Corehalla Logo" class="main-logo" />
         </router-link>
       </div>
       <!-- <div class="window-btns">

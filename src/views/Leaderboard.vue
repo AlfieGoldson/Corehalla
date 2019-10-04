@@ -114,7 +114,7 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("../assets/imgs/backgrounds/asuri-wallpaper.png");
+    background-image: url("/images/backgrounds/asuri-wallpaper.png");
     background-position: center;
     background-size: cover;
     filter: saturate(0.32);

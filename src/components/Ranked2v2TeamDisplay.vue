@@ -1,6 +1,6 @@
 <template>
   <li class="ranked2v2-team-display">
-    <img :src="require(`../assets/imgs/icons/ranked/${tier}.png`)" class="tier-banner" />
+    <img :src="rankedIconURL" class="tier-banner" />
     <p class="align-left">
       <span class="teammate-name">{{ teammate }}</span>&nbsp;
       &nbsp;•&nbsp;
@@ -22,6 +22,11 @@ export default {
     wins: String,
     losses: String,
     winrate: String
+  },
+  computed: {
+    rankedIconURL: () => {
+      return `../../../public/assets/images/icons/ranked/${this.props.tier}.png`
+    }
   }
 };
 </script>

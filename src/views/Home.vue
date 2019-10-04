@@ -53,6 +53,6 @@ Corehalla.com is a Community maintained statistics/rankings website and wiki for
 
 <style lang="scss" scoped>
 	.header-bg {
-		background-image: url("../assets/imgs/backgrounds/jhala-wallpaper.png");
+		background-image: url("/assets/images/backgrounds/jhala-wallpaper.png");
 	}
 </style>

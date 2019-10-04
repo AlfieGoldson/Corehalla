@@ -115,7 +115,7 @@ export default {
 
 <style lang="scss" scoped>
   .header-bg {
-    background-image: url("../assets/imgs/backgrounds/ada-wallpaper.png");
+    background-image: url("/assets/images/backgrounds/ada-wallpaper.png");
   }
 .ranked2v2-teams {
   margin: 0;
