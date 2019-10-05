@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import PlayerStats from './views/PlayerStats.vue'
 import Leaderboard from './views/Leaderboard.vue'
-import Legend from './views/wiki/legends/legend.vue'
+import Wiki from './views/Wiki.vue'
 
 Vue.use(Router)
 
@@ -27,31 +27,31 @@ export default new Router({
             component: PlayerStats
         },
         {
-            path: '/l',
-            name: 'wiki-legend-page',
-            component: Legend
+            path: '/wiki',
+            name: 'wiki',
+            component: Wiki
         },
         {
             path: '/twitter',
-            beforeEnter(to, from, next) {
+            beforeEnter: () => {
                 window.location = "https://twitter.com/Corehalla"
             }
         },
         {
             path: '/discord',
-            beforeEnter(to, from, next) {
+            beforeEnter: () => {
                 window.location = "https://discord.gg/eD248ez"
             }
         },
         {
             path: '/github-website',
-            beforeEnter(to, from, next) {
+            beforeEnter: () => {
                 window.location = "https://github.com/AlfieGoldson/Corehalla"
             }
         },
         {
             path: '/github-npm-module',
-            beforeEnter(to, from, next) {
+            beforeEnter: () => {
                 window.location = "https://github.com/AlfieGoldson/Corehalla-NPM"
             }
         }

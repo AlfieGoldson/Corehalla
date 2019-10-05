@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 const bh_api = require("corehalla")(process.env.BRAWLHALLA_API_KEY);
+console.log(process.env.VUE_BRAWLHALLA_API_KEY);
 
 Vue.use(Vuex)
 
@@ -17,7 +18,10 @@ export const store = new Vuex.Store({
             trello: "https://trello.com/b/ZjfqD2Qx/corehalla-dev"
         },
         leaderboard: [],
-        playerStats: []
+        playerStats: [],
+        wiki: {
+            currentPage: ''
+        }
     },
     getters: {
         fetchLeaderboard: state => {
@@ -25,6 +29,9 @@ export const store = new Vuex.Store({
         },
         fetchPlayerStats: state => {
             return state.playerStats;
+        },
+        getCurrentWikiPage: state => {
+            return state.wiki.currentPage;
         }
     },
     mutations: {
@@ -39,6 +46,12 @@ export const store = new Vuex.Store({
         },
         clearPlayerStats: state => {
             state.playerStats = [];
+        },
+        updateWikiPage: (state, data) => {
+            Vue.set(state.wiki, 'currentPage', data);
+        },
+        clearWikiPage: state => {
+            state.wiki.currentPage = '';
         }
     },
     actions: {
@@ -55,6 +68,17 @@ export const store = new Vuex.Store({
                 context.commit('updatePlayerStats', data);
             })
                 .catch(err => console.log(err));
+        },
+        changeWikiPage: (context/* pageURL */) => {
+            context.commit('clearWikiPage');
+            fetch('/wiki/raw/README.md')
+                .then(res => res.text()
+                    .then(text => {
+                        context.commit('updateWikiPage', text);
+                    })
+                    .catch(console.error)
+                )
+                .catch(console.error)
         }
     }
 })

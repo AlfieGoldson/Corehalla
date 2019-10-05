@@ -3,7 +3,7 @@
     17 Teams • 145 Games (100W/45L)
     <br />
     <br />
-    <img :src="require(`../assets/imgs/ranked-banners/Bronze 2.png`)" class="tier-banner" />
+    <img :src="rankedIconURL" class="tier-banner" />
     <p class="align-left">
       <span class="bold">Average 2v2 Stats</span>
       <br />
@@ -26,6 +26,11 @@ export default {
     avg_wins: String,
     avg_losses: String,
     avg_winrate: String
+  },
+  computed: {
+    rankedIconURL: () => {
+      return `/assets/images/ranked-banners/Bronze 2.png`;
+    }
   }
 };
 </script>

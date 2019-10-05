@@ -7,10 +7,12 @@ import { faTimes, faChevronLeft, faChevronRight, faStar, faChartPie, faUserFrien
 import { faSquare, faWindowMinimize } from '@fortawesome/free-regular-svg-icons'
 import { faDiscord, faTwitter, faSteam, faYoutube, faTwitch, faInstagram, faReddit, faGithub, faNodeJs, faPatreon, faTrello } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import VueMarkdown from 'vue-markdown'
 
 library.add(faTimes, faSquare, faWindowMinimize, faChevronLeft, faChevronRight, faStar, faChartPie, faTrello, faPatreon, faUserFriends, faPalette, faSortAmountDown, faDiscord, faTwitter, faSteam, faYoutube, faTwitch, faInstagram, faReddit, faUserCheck, faSearch, faTableTennis, faGithub, faNodeJs, faBook);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component('vue-markdown', VueMarkdown);
 
 Vue.config.productionTip = false
 

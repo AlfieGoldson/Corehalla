@@ -8,9 +8,9 @@
       <br />Peak Elo: 2312
       <br />Winrate: 64%
       <br />
-      <img src="../assets/imgs/icons/flags/EU.png" width="40px" height="40px" />
+      <img src="/assets/images/icons/flags/EU.png" width="40px" height="40px" />
     </p>
-    <img src="../assets/imgs/ranked-banners/Emerald.png" class="tier-banner" />
+    <img src="/assets/images/ranked-banners/Emerald.png" class="tier-banner" />
     <p class="align-left">
       <span class="bold">Ada&nbsp;</span>
       <span class="italic">Highest Legend</span>
@@ -19,7 +19,7 @@
       <br />Peak Elo: 2277
       <br />Winrate: 65%
       <br />
-      <img src="../assets/imgs/icons/legends/ada.png" width="40px" height="40px" />
+      <img src="/assets/images/icons/legends/ada.png" width="40px" height="40px" />
     </p>
   </div>
 </template>

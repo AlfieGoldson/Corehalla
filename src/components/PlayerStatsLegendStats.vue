@@ -1,8 +1,8 @@
 <template>
   <div class="legend-stats">
-    <img src="../assets/imgs/thumbs/legends/wu shang.jpg" alt class="legend-thumb" width="192px" />
-    <img src="../assets/imgs/thumbs/legends/ada.jpg" alt class="legend-thumb" width="192px" />
-    <img src="../assets/imgs/thumbs/legends/diana.jpg" alt class="legend-thumb" width="192px" />
+    <img src="/assets/images/thumbs/legends/wu shang.jpg" alt class="legend-thumb" width="192px" />
+    <img src="/assets/images/thumbs/legends/ada.jpg" alt class="legend-thumb" width="192px" />
+    <img src="/assets/images/thumbs/legends/diana.jpg" alt class="legend-thumb" width="192px" />
   </div>
 </template>
 
