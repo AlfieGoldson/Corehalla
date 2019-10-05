@@ -70,7 +70,7 @@ export const store = new Vuex.Store({
         },
         changeWikiPage: (context/* pageURL */) => {
             context.commit('clearWikiPage');
-            fetch('/wiki/raw/README.md')
+            fetch('https://raw.githubusercontent.com/AlfieGoldson/CorehallaWiki/master/raw/README.md')
                 .then(res => res.text()
                     .then(text => {
                         context.commit('updateWikiPage', text);
