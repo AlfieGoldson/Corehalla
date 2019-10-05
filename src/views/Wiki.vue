@@ -16,7 +16,7 @@
 				</ul>
 			</div>
 		</div>
-		<vue-markdown>{{ pageMarkdown }}</vue-markdown>
+		<vue-markdown :key="pageMarkdown">{{ pageMarkdown }}</vue-markdown>
 	</div>
 </template>
 
