@@ -25,7 +25,7 @@ export default {
   },
   computed: {
     rankedIconURL: () => {
-      return `../../../public/assets/images/icons/ranked/${this.props.tier}.png`
+      return `/public/assets/images/icons/ranked/${this.props.tier}.png`
     }
   }
 };

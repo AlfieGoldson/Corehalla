@@ -20,7 +20,7 @@ export const store = new Vuex.Store({
         leaderboard: [],
         playerStats: [],
         wiki: {
-            currentPage: 'fiyu'
+            currentPage: ''
         }
     },
     getters: {
@@ -71,7 +71,7 @@ export const store = new Vuex.Store({
         },
         changeWikiPage: (context/* pageURL */) => {
             context.commit('clearWikiPage');
-            fetch('../wiki/raw/index.md')
+            fetch('/wiki/raw/README.md')
                 .then(res => res.text()
                     .then(text => {
                         context.commit('updateWikiPage', text);

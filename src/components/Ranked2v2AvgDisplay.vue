@@ -29,7 +29,7 @@ export default {
   },
   computed: {
     rankedIconURL: () => {
-      return `../../../assets/images/ranked-banners/Bronze 2.png`;
+      return `/assets/images/ranked-banners/Bronze 2.png`;
     }
   }
 };
