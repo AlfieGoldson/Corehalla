@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 const bh_api = require("corehalla")(process.env.BRAWLHALLA_API_KEY);
-console.log(process.env.VUE_BRAWLHALLA_API_KEY);
 
 Vue.use(Vuex)
 
