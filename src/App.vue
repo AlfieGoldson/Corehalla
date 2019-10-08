@@ -40,10 +40,10 @@
             </router-link>
           </li>
           <li>
-            <router-link to="/wiki">
+            <a href="/">
               <font-awesome-icon class="nav-item-icon" icon="book" />
               <span class="nav-item-label">Wiki</span>
-            </router-link>
+            </a>
           </li>
           <li>
             <router-link to="/">

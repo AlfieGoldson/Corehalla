@@ -4,11 +4,13 @@
     "private": true,
     "scripts": {
         "start": "node server.js",
-        "web:serve": "vue-cli-service serve",
+        "wiki": "vuepress dev public/wiki/raw",
+        "wiki:build": "vuepress build public/wiki/raw",
+        "web": "vue-cli-service serve",
         "web:build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
+        "electron": "vue-cli-service electron:serve",
         "electron:build": "vue-cli-service electron:build",
-        "electron:serve": "vue-cli-service electron:serve",
         "qcrawler": "node src/bots/queue-crawler.js"
     },
     "main": "background.js",
@@ -42,6 +44,7 @@
         "node-sass": "^4.12.0",
         "sass-loader": "^8.0.0",
         "vue-cli-plugin-electron-builder": "^1.4.0",
-        "vue-template-compiler": "^2.6.10"
+        "vue-template-compiler": "^2.6.10",
+        "vuepress": "^1.1.0"
     }
 }

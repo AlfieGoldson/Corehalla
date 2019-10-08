@@ -1,13 +1,17 @@
 const express = require('express');
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 
 app.use(express.static(__dirname + '/dist/'));
 
+app.get('/wiki/*', (req, res) => {
+    res.sendFile(__dirname + '/public/wiki/raw/.vuepress/dist/index.html')
+})
+
 app.get(/.*/, (req, res) => {
-    res.sendfile(__dirname + '/dist/index.html');
+    res.sendFile(__dirname + '/dist/index.html');
 })
 
 app.listen(PORT, () => {
